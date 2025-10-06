@@ -1,4 +1,4 @@
-let in_range (n : int) (min : int) (max : int) : bool =
+let in_range (n) (min) (max) : bool =
   if max < min then failwith("Incorrect sintax") else
     n>=min && n<=max;;
 
