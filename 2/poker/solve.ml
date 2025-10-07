@@ -34,7 +34,7 @@ let test tot =
       string_of_float(100. *. (float_of_int w /. float_of_int tot)) ^ "%" 
     else 
       test_rec (n-1) tot (w + if poker (rnd_hand()) then 1 else 0)
-  in test_rec tot tot;
+  in test_rec tot tot 0;
 ;;
 
 test 100000;;
