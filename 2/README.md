@@ -1,0 +1,2 @@
+# FINITO SEZIONE 2 COMPLETAMENTE
+Stessa cosa di prima, pero' sta volta non sono sicuro della questione di fun of type e charateristic fun, forse ci tornero' come finisco tutto se me lo ricordo GL
