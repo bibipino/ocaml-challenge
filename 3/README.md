@@ -1,0 +1,2 @@
+# FINITO COMPLETAMENTE 3
+Anche adesso sono riuscito a finire la parte piu' lunga, per alcune ho avuto un po' di difficolta' ma ce l'ho fatta alla fine, alcune sono molto simili ad alcune soluzioni del prof perche' dopo averli fatti non mi piacevano le mie soluzioni o non sapevo proprio come avrei potuto farlo quindi ho preso ispirazione/copiato per imparare quello "stile"
