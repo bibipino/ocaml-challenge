@@ -130,6 +130,7 @@ assert (accept ['1';'0';'0';'1'] m1 = false);;
 
 (*Non ho capito cosa voglia lol*)
 
+(*Analizza il codice*)
 let complete m sink =
   let qQ = getstates m in
   let lL = getlabels m in
