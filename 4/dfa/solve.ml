@@ -1,5 +1,5 @@
 type ('a,'b) fsa = {
-  trans: ('a * 'b * 'a) list;      (* set of transitions *)
+  trans: ('a * 'b * 'a) list;      (* set of transitions *) 
   init: 'a;                        (* initial state *)
   final: 'a list                   (* final states *)
 }
@@ -131,12 +131,21 @@ assert (accept ['1';'0';'0';'1'] m1 = false);;
 (*Non ho capito cosa voglia lol*)
 
 (*Analizza il codice*)
+(*
 let complete m sink =
-  let qQ = getstates m in
-  let lL = getlabels m in
+  let qQ = getstates m in (*[0;1;2]*)
+  let lL = getlabels m in (*['1';'2']*)
   let tl = List.fold_left (fun tl q -> tl @ (List.map (fun a -> (q,a,sink)) lL)) [] (sink::qQ) in
   let sl = List.filter (fun (q,a,_) -> not (List.mem a (outlabels m q))) tl
   in { trans = m.trans @ sl; init = m.init; final = m.final }
+;;
+*)
+let complete m sink =
+  let qL = getstates m in
+  let lL = getlabels m in
+  let tuttel = List.fold_right (fun q l -> (List.map (fun a -> (q,a,sink)) lL) @ l) (sink::qL) [] in
+  let filteredl = List.filter (fun (q,a,f) -> not (List.mem a (outlabels m q))) tuttel in
+  { trans = m.trans @ filteredl; init = m.init; final = m.final}
 ;;
 
 let m3' = complete m3 3;;
