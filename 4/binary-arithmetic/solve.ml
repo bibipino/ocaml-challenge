@@ -43,7 +43,9 @@ let add bit1 bit2 =
   | 0 -> bit
   | x -> addvero (succ bit) (x-1)
   in
+  if len bit1 = len bit2 then
   addvero bit1 (int_of_bitint bit2)
+  else failwith "non hanno la stessa lunghezza"
 ;;
 
 assert(int_of_bitint (add (U UT) (U(Z ZT)))= 7);;
