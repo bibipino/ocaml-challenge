@@ -20,8 +20,32 @@ let is_btree t comp = match t with
 let rec search t comp n = match t with
 | Empty -> false
 | Node (v,l,r) -> 
-  match comp v n with
+  match comp n v with
   | 0 -> true
   | b when b < 0 -> search l comp n
   | _ -> search r comp n
 ;;
+
+let t0 =
+Node(7,
+  Node(4,
+    Node(1,Empty,Empty),
+    Node(5,Empty,Empty)),
+  Node(10,Empty,Empty))
+;;
+
+let t1 =
+Node(8,
+  Node(4,
+    Node(1,Empty,Empty),
+    Node(5,Empty,Empty)),
+  Node(10,Empty,Empty))
+;;
+
+gttree 11 t0 compare;;
+
+is_btree t0 compare;; (*Non dovrebbe dare false ci lavoro poi*)
+
+search t0 compare 1;;
+
+compare t0 t1;;
